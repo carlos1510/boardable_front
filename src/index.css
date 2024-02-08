@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600&family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap");
+
+/* 1. Settings */
+@import url(styles/1-settings/border.css);
+@import url(styles/1-settings/color.css);
+@import url(styles/1-settings/spacing.css);
+@import url(styles/1-settings/typography.css);
+@import url(styles/1-settings/width.css);
+
+/* 2. Generic */
+
+/* 3. Elements */
+@import url(styles/3-elements/elements.css);
+
+/* 4. Objects */
+@import url(styles/4-objects/objects.css);
+
+/* 5. Components */
+
+/* Atoms */
+@import url(styles/5-components/button.css);
+
+
+/* 6. Utilities */

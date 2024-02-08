@@ -1,0 +1,106 @@
+@import url(/src/styles/1-settings/spacing.css);
+
+.container {
+    width: 1440px;
+    margin: 0 auto;
+    padding: var(--spacing-24, 96px) 0px var(--spacing-24, 440px) 0px;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: var(--spacing-8, 32px);
+    
+}
+
+.content_login {
+    display: flex;
+    width: 1440px;
+    padding: var(--spacing-24, 96px) 0px var(--spacing-24, 440px) 0px;
+
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-8, 32px);
+}
+
+.text_title_login {
+    color: var(--foreground, #171717);
+    text-align: center;
+    /* display-4xl/leading-none/semibold */
+    font-family: "Familjen Grotesk";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px; /* 100% */
+}
+
+.form {
+    display: flex;
+    width: var(--width-xs, 320px);
+    max-width: var(--width-xs, 320px);
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-4, 16px);
+}
+
+.input-group{
+    margin-bottom: 12px;
+}
+
+.label {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px; /* 155.556% */
+    margin-bottom: 4px;
+}
+
+.input {
+    width: 100%;
+    /*padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+    border: 1px solid hsl(240, 6%, 10%);
+    border-radius: 16px;
+    background: hsl(0, 0%, 100%);
+    line-height: 16px; *//* 100% */
+    height: 20px;
+}
+
+.input::placeholder {
+    color: hsl(0, 0%, 45%);
+}
+
+.button {
+    width: 100%;
+    display: flex;
+    height: 44px;
+    padding: var(--spacing-2, 8px) var(--spacing-8, 32px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-2, 8px);
+    align-self: stretch;
+    border-radius: var(--rounded-md, 6px);
+    background: var(--primary, #6D28D9);
+    color: white;
+  }
+
+  .link_content {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .link {
+    color: var(--primary, #6D28D9);
+    /* text-sm/leading-6/medium */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 171.429% */
+    text-decoration: none;
+  }
+
+  .link_svg {
+    width: var(--spacing-4, 16px);
+
+    height: var(--spacing-4, 16px);
+  }
