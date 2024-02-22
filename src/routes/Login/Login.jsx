@@ -2,13 +2,44 @@ import styles from "./styles.module.css";
 
 import arrowRightUrl from "../../assets/arrow-right.svg";
 
+import { authProvider } from "../../auth";
+
 import {
     Form,
     NavLink,
+    redirect,
+    useActionData,
+    useLocation,
+    useNavigation,
 
   } from "react-router-dom";
 
+export async function action({ request }) {
+    let formData = await request.formData();
+    let username = formData.get("username");
+    let password = formData.get("password");
+
+    try{
+        await authProvider.login(username, password);
+    }catch(error){
+        return {
+            error: "Invalid login attempt",
+        };
+    }
+
+    let redirectTo = formData.get("redirectTo");
+    return redirect(redirectTo || "/");
+}
+
 function Login() {
+    const actionData = useActionData();
+    const navigation = useNavigation();
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const redirectTo = searchParams.get("from");
+
+    const isSubmitting = navigation.state === "submitting";
+
     return (
         <div className={styles.container}>
             <div className={styles.content_login}>
@@ -20,6 +51,9 @@ function Login() {
                 </svg>
                 <h1 className={styles.text_title_login}>Welcome to Boardable</h1>
                 <Form className={styles.form} method="POST">
+                    {redirectTo && (
+                        <input type="hidden" name="redirectTo" value={redirectTo} />
+                    )}
                     <div >
                         <label htmlFor="username" className={styles.label}>Username</label>
                         <input 
@@ -43,6 +77,9 @@ function Login() {
                     <button type="submit" className={styles.button} >
                         Login
                     </button>
+                    {actionData?.error && (
+                      <p className={styles.error}>{actionData.error}</p>
+                    )}
                 </Form>
                 <div className={styles.link_content}>
                     <NavLink to="/signup" className={styles["link"]}> 
