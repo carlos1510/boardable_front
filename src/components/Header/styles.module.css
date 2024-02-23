@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 32px;
+  }
+  
+  .message {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  
+    gap: var(--spacing-2, 8px);
+  }
+
+  .message > span {
+    color: var(--foreground, #171717);
+    /* text-2xl/leading-8/bold/tracking-tight */
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+    letter-spacing: -0.6px;
+  }
+
+  .content_user {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  
+    gap: var(--spacing-2, 8px);
+  }
+  
+  .username {
+    
+    padding: 8px 8px;
+    border-radius: var(--rounded-md, 6px);
+    border: 1px solid var(--border, #D4D4D4);
+    background: var(--background, #FFF);
+  }
+  
+  .button {
+    font-weight: 14px;
+    padding: 8px 16px;
+    line-height: 21px; /* 100% */
+    cursor: pointer;
+    border: 1px solid var(--border, #D4D4D4);
+    border-radius: var(--rounded-md, 6px);
+  }
+  

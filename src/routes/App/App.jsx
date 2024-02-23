@@ -1,5 +1,7 @@
 import { redirect } from "react-router-dom";
 import { authProvider } from "../../auth";
+import styles from "./styles.module.css";
+import Header from "../../components/Header/Heade";
 
 export async function loader({ request }) {
     if(!authProvider.isAuthenticated){
@@ -12,9 +14,11 @@ export async function loader({ request }) {
 }
 
 function App() {
+    const username  = "carlos";
+    //const { username } = useLoaderData();
     return (
-        <div>
-            <h1>Hello</h1>
+        <div className={styles.container} >
+            <Header username={username} className={styles.header} />
         </div>
     );
 }
