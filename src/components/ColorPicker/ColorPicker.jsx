@@ -38,11 +38,10 @@ function ColorPicker({ name, onChange = () => {} }){
                 </div>
             )}
             <button 
-            className={styles["action-button"]}
+            className={styles["color"]} style={{ marginLeft: "5px"}}
             type="button"
             onClick={() => setShowColors(!showColors)}
             aria-label={name}>
-                <img src={paletteUrl} />
             </button>
         </div>
     )
