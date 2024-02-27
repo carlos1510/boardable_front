@@ -3,6 +3,7 @@ import Login, { action as loginAction } from "./routes/Login/Login";
 import Signup from "./routes/signup/Signup";
 import App, { loader as rootLoader } from "./routes/App/App";
 import Board from "./components/Board/Board";
+import { action as logoutAction } from "./routes/logout";
 
 export const router = createBrowserRouter([
     {
@@ -25,5 +26,9 @@ export const router = createBrowserRouter([
     {
         path: "/signup",
         element: <Signup />
-    }
+    },
+    {
+        path: "/logout",
+        action: logoutAction,
+    },
 ]);
