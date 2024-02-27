@@ -32,6 +32,7 @@ function ColorPicker({ name, onChange = () => {} }){
                         className={styles.color}
                         style={{ backgroundColor: color }}
                         name={name}
+                        value={color}
                         onClick={handleClick}
                         />
                     ))}

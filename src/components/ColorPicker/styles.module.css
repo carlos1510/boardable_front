@@ -33,7 +33,7 @@
     border-radius: 25px;
     cursor: pointer;
     border: none;
-    color: transparent;
+    color: transparent !important;
   }
   
   .color:first-child {
