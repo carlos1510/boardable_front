@@ -1,3 +1,4 @@
+import ColorPicker from "../ColorPicker/ColorPicker";
 import styles from "./styles.module.css";
 
 function Board() {
@@ -17,14 +18,21 @@ function Board() {
                     <div className={styles.board_task}>
                         <span>Board title</span>
                         <input type="text" />
-                        <div>
-                            <div></div>
-                            <div>
-
+                        <div className={styles.board_task_footer}>
+                            <div className={styles.board_color}>
+                                <span className={styles.board_color_text}>Color </span>
+                                <ColorPicker />
                             </div>
+
+                            <button 
+                                className={styles["action-button"]}>
+                                Create
+                            </button>
                         </div>
                     </div>
+                    
                 </div>
+                
             </div>
         </div>
     );
