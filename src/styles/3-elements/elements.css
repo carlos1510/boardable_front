@@ -44,7 +44,7 @@ body {
   input:not([type="radio"], [type="checkbox"]),
   select,
   textarea {
-    width: 100%;
+    /*width: 100%;*/
     height: var(--spacing-10);
     padding: var(--spacing-2) var(--spacing-3);
     border-radius: var(--rounded-md);

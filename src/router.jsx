@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Login, { action as loginAction } from "./routes/Login/Login";
 import Signup from "./routes/signup/Signup";
 import App, { loader as rootLoader } from "./routes/App/App";
+import Board from "./components/Board/Board";
 
 export const router = createBrowserRouter([
     {
@@ -9,6 +10,12 @@ export const router = createBrowserRouter([
         path: "/",
         element: <App />,
         loader: rootLoader,
+        children: [
+            {
+                index: true,
+                element: <Board />
+            }
+        ]
     },
     {
         path: "/login",
