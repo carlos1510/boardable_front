@@ -14,8 +14,8 @@
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-8, 32px);
-
     align-self: stretch;
+
 }
 
 .board_head {
@@ -63,8 +63,17 @@
     background: var(--background);
 }
 
-.max_width_element {
+.element_select {
     width: 100%;
+    height: var(--spacing-10);
+    padding: var(--spacing-2) var(--spacing-3);
+    border-radius: var(--rounded-md);
+    border: 1px solid var(--border);
+    background: var(--background);
+  
+    color: var(--foreground);
+    font-size: var(--font-sm);
+    line-height: var(--leading-6);
 }
 
 .board_task_footer {

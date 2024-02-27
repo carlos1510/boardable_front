@@ -8,8 +8,8 @@ function Board() {
                 <div className={styles.board_head}>
                     <h2>My Boards</h2>
                     <div>
-                        <label htmlFor="">Sort by</label>
-                        <select className={styles.max_width_element}>
+                        <label htmlFor="cmbSortBy">Sort by</label>
+                        <select id="cmbSortBy" className={styles.element_select}>
                             <option value="1">Created date</option>
                         </select>
                     </div>
