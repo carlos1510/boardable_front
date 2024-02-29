@@ -1,20 +1,21 @@
 import { createBrowserRouter } from "react-router-dom";
-import Login, { action as loginAction } from "./routes/Login/Login";
+import Login, { action as loginAction } from "./routes/Login";
 import Signup from "./routes/signup/Signup";
-import App, { loader as rootLoader } from "./routes/App/App";
-import Board from "./components/Board/Board";
+import App, { action as rootAction,loader as rootLoader } from "./routes/App";
 import { action as logoutAction } from "./routes/logout";
+import Boards from "./routes/Boards/Boards";
 
 export const router = createBrowserRouter([
     {
         id: "app",
-        path: "/",
+        path: "/board?",
         element: <App />,
         loader: rootLoader,
+        action: rootAction,
         children: [
             {
                 index: true,
-                element: <Board />
+                element: <Boards />
             }
         ]
     },

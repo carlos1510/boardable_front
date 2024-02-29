@@ -1,7 +1,9 @@
-import { Outlet, redirect, useActionData } from "react-router-dom";
+import { Outlet, redirect, useActionData, useLoaderData } from "react-router-dom";
 import { authProvider } from "../../auth";
 import styles from "./styles.module.css";
 import Header from "../../components/Header/Heade";
+import { createBoard } from "../../services/boards"; 
+import { getUser } from "../../services/users";
 
 export async function loader({ request }) {
     if(!authProvider.isAuthenticated){
@@ -10,11 +12,28 @@ export async function loader({ request }) {
         return redirect("/login?" + params.toString());
     }
 
-    return null;
+    //const [id, username, password, email] = await Promise.all([getUser()]);
+    const username = "carlos";
+    //const username="carlos";
+    //console.log("datos del usuario: ",id, username, password, email);
+
+    return {username};
+}
+
+export async function action({ request }){
+    let formData = await request.formData();
+    const boardData = Object.fromEntries(formData.entries());
+    try{
+        await createBoard(boardData);
+        return redirect("/");
+    }catch(error){
+        return { error: error.message };
+    }
 }
 
 function App() {
-    const username  = "carlos";
+    const {username}  = useLoaderData();
+    console.log("username: ", username);
     const actionData = useActionData();
     //const { username } = useLoaderData();
     return (

@@ -8,38 +8,51 @@ const authContext = React.createContext({
   });
   
 export function AuthProvider({ children }) {
-    const [isAuthenticated, setIsAuthenticated] = React.useState(false);
 
     const [token, setToken] = React.useState(null);
 
-    /*React.useEffect(() => {
+    React.useEffect(() => {
         const savedToken = window.localStorage.getItem(tokenKey);
     
         if (savedToken) {
-          setIsAuthenticated(true);
+            setToken(savedToken);
         }
-    }, []);*/
+    }, []);
 
     async function login(username, password) {
+        const url = URL_BASE + "/login";
         const options = {
             method: "POST",
             body: JSON.stringify({ username, password }),
             headers: {
-                "Content-Type": "application/json",
+              "Content-Type": "application/json",
             },
+        };
+
+        const response = await fetch(url, options);
+        if(response.ok){
+            const body = await response.json();
+            setToken(body.data.token);
+            window.localStorage.setItem(tokenKey, body.data.token);
+        }else {
+            const error = await response.json();
+            throw new Error(error);
         }
-
-        const response = await fetch(URL_BASE + "/users", options);
-
-        if(!response.ok) throw new Error(response.statusText);
-
-        setIsAuthenticated(true);
 
     }
 
+    function logout(){
+        setToken(null);
+        window.localStorage.removeItem(tokenKey);
+    }
+
     return (
-        <authContext.Provider value={{ isAuthenticated, login }}>
+        <authContext.Provider value={{ token, login, logout }}>
           {children}
         </authContext.Provider>
     );
+}
+
+export function useAuth(){
+    return React.useContext(authContext);
 }
