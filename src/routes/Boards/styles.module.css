@@ -1,0 +1,112 @@
+.container {
+    display: flex;
+    width: 1440px;
+    padding: 0px var(--spacing-4, 16px);
+
+    flex-direction: column;
+    align-items: center;
+}
+
+.content_board {
+    display: flex;
+    max-width: var(--width-5xl, 1024px);
+    padding: var(--spacing-16, 64px) 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-8, 32px);
+    align-self: stretch;
+
+}
+
+.board_head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-4, 16px);
+}
+
+.board_body {
+    display: flex;
+    max-width: var(--width-5xl, 1024px);
+    padding: var(--spacing-16, 64px) 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-8, 32px);
+
+    align-self: stretch;
+}
+
+.board_task {
+    display: flex;
+    width: 256px;
+    height: 144px;
+    padding: var(--spacing-4, 16px);
+
+    flex-direction: column;
+
+    gap: var(--spacing-4, 16px);
+
+    border-radius: var(--rounded-md, 6px);
+    background: #E2E8F0;
+}
+
+.board_task > input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-2, 8px);
+    align-self: stretch;
+    height: var(--spacing-10);
+    padding: var(--spacing-2) var(--spacing-3);
+    border-radius: var(--rounded-md);
+    border: 1px solid var(--border);
+    background: var(--background);
+}
+
+.element_select {
+    width: 100%;
+    height: var(--spacing-10);
+    padding: var(--spacing-2) var(--spacing-3);
+    border-radius: var(--rounded-md);
+    border: 1px solid var(--border);
+    background: var(--background);
+  
+    color: var(--foreground);
+    font-size: var(--font-sm);
+    line-height: var(--leading-6);
+}
+
+.board_task_footer {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.board_color {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.board_color_text {
+    color: #262626;
+
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 14px; /* 100% */
+}
+
+.action-button {
+    display: flex;
+    height: 36px;
+    padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+    border-radius: var(--rounded-md, 6px);
+    background: var(--primary, #6D28D9);
+    color: white;
+  }
+  
+  .action-button:hover {
+    background: hsla(281, 31%, 50%, 0.952);
+  }

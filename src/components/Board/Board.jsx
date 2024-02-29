@@ -1,38 +1,14 @@
-import ColorPicker from "../ColorPicker/ColorPicker";
+import BoardForm from "../BoardForm/BoardForm";
 import styles from "./styles.module.css";
+import { useFetcher } from "react-router-dom";
 
-function Board() {
+function Board({ board }) {
+    const fetcher = useFetcher();
+    const isSubmitting = Boolean(fetcher.formMethod);
     return (
-        <div className={styles.container}>
-            <div className={styles.content_board}>
-                <div className={styles.board_head}>
-                    <h2>My Boards</h2>
-                    <div>
-                        <label htmlFor="cmbSortBy">Sort by</label>
-                        <select id="cmbSortBy" className={styles.element_select}>
-                            <option value="1">Created date</option>
-                        </select>
-                    </div>
-                </div>
-                <div className={styles.board_body}>
-                    <div className={styles.board_task}>
-                        <span>Board title</span>
-                        <input type="text" />
-                        <div className={styles.board_task_footer}>
-                            <div className={styles.board_color}>
-                                <span className={styles.board_color_text}>Color </span>
-                                <ColorPicker />
-                            </div>
-
-                            <button 
-                                className={styles["action-button"]}>
-                                Create
-                            </button>
-                        </div>
-                    </div>
-                    
-                </div>
-                
+        <div className={styles.board} style={{ backgroundColor: note.color }}>
+            <div className={styles.content}>
+                <h2 className={styles.title}>{ board.name_title }</h2>
             </div>
         </div>
     );

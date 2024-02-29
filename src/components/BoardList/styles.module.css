@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    column-gap: 16px;
+    row-gap: 32px;
+    flex-wrap: wrap;
+}
+
+.empty {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 40px; /* 111.111% */
+}
+  
