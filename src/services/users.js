@@ -58,3 +58,30 @@ export async function editUser(id, updateData){
     const body = await response.json();
     return Promise.reject(new Error(body.error));
 }
+
+export async function deleteUser(id){
+    const url = `${URL_BASE}/user/${id}`;
+    const token = window.localStorage.getItem(tokenKey);
+
+    const options = {
+        method: "DELETE",
+        headers: {
+        Authorization: `bearer ${token}`,
+        },
+    };
+
+    const response = await fetch(url, options);
+
+    if (response.ok) {
+        authProvider.logout();
+        throw redirect("/login");
+    }
+
+    if (response.status === 401) {
+        authProvider.logout();
+        throw redirect("/login");
+    }
+    
+    const body = await response.json();
+    return Promise.reject(new Error(body.error));
+}

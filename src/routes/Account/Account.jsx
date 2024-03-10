@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Form, useNavigation, useOutletContext } from "react-router-dom";
 import styles from "./styles.module.css";
-import { editUser, getUser } from "../../services/users";
+import { deleteUser, editUser, getUser } from "../../services/users";
 
 const initialValues = {
     id: 0,
@@ -56,6 +56,12 @@ function Account(){
         }catch(error){}
     }
 
+    async function confirmarDeleteUser(){
+        try{
+            await deleteUser(formData.id);
+        }catch(error){}
+    }
+
     const handleUpdate = () => {
         
         confirmUpdateUser();
@@ -63,7 +69,7 @@ function Account(){
     }
 
     const handleDelete = () => {
-        console.log('Datos eliminados:', formData);
+        confirmarDeleteUser();
     }
 
     return (
