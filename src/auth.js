@@ -19,6 +19,7 @@ export const authProvider = {
 
     if (response.ok) {
       const body = await response.json();
+      console.log(body);
       authProvider.isAuthenticated = true;
       authProvider.token = body.data.token;
       window.localStorage.setItem(tokenKey, body.data.token);

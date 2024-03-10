@@ -4,6 +4,7 @@ import Signup from "./routes/signup/Signup";
 import App, { action as rootAction,loader as rootLoader } from "./routes/App";
 import { action as logoutAction } from "./routes/logout";
 import Boards from "./routes/Boards/Boards";
+import Account from "./routes/Account";
 
 export const router = createBrowserRouter([
     {
@@ -16,6 +17,10 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 element: <Boards />
+            },
+            {
+                path: "account",
+                element: <Account />
             }
         ]
     },

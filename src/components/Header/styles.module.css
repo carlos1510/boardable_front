@@ -32,12 +32,15 @@
     gap: var(--spacing-2, 8px);
   }
   
-  .username {
+  .button_account {
     
-    padding: 8px 8px;
-    border-radius: var(--rounded-md, 6px);
+    font-weight: 14px;
+    padding: 8px 16px;
+    line-height: 21px; /* 100% */
+    cursor: pointer;
     border: 1px solid var(--border, #D4D4D4);
-    background: var(--background, #FFF);
+    border-radius: var(--rounded-md, 6px);
+    text-decoration: none;
   }
   
   .button {

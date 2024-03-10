@@ -3,18 +3,17 @@ import styles from "./styles.module.css";
 import { useRouteLoaderData } from "react-router-dom";
 import Board from "../Board/Board";
 
-function NoteList({ className }){
-    const { activeBoards } = useRouteLoaderData("app");
-    const boards = activeBoards;
+function BoardList({ className }){
+    const { boards } = useRouteLoaderData("app");
 
-    const containerClassNames = clsx(className, styles.container);
+    //const containerClassNames = clsx(className, styles.container);
 
     if (boards.length === 0){
         return <p className={styles.empty}>No Boards</p>
     }
 
     return (
-        <div className={containerClassNames}>
+        <div className={styles.container}>
             {boards.map((board) => (
                 <Board key={board.id} board={board} />
             ))}
@@ -22,4 +21,4 @@ function NoteList({ className }){
     );
 }
 
-export default NoteList;
+export default BoardList;

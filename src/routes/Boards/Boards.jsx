@@ -1,4 +1,5 @@
 import BoardForm from "../../components/BoardForm/BoardForm";
+import BoardList from "../../components/BoardList/BoardList";
 import styles from "./styles.module.css";
 
 function Boards() {
@@ -16,6 +17,8 @@ function Boards() {
                 </div>
                 <div className={styles.board_body}>
                     <BoardForm />
+
+                    <BoardList className={styles[""]} />
                     
                 </div>
                 

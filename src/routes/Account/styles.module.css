@@ -1,0 +1,74 @@
+@import url("/src/styles/1-settings/width.css");
+.container_account {
+    display: flex;
+    max-width: 64rem;
+    padding: 4rem 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 82px;
+    align-self: stretch;
+}
+
+.title_account {
+    color: var(--foreground, #171717);
+    /* text-2xl/leading-8/bold */
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+}
+
+.content_account {
+    display: flex;
+    padding: 0px 352px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.formControl {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-2, 8px);
+    align-self: stretch;
+    padding: var(--spacing-2) var(--spacing-3);
+    border-radius: var(--rounded-md);
+    border: 1px solid var(--border);
+    background: var(--background);
+}
+
+.button-primary{
+    width: 100%;
+    display: flex;
+    height: 44px;
+    padding: var(--spacing-2, 8px) var(--spacing-8, 32px) ;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-2, 8px);
+    align-self: stretch;
+    border-radius: var(--rounded-md, 6px);
+    background: var(--primary, #6D28D9);
+    border: 1px solid #6D28D9;
+    color: white;
+}
+
+.button-danger{
+    width: 100%;
+    display: flex;
+    height: 44px;
+    padding: var(--spacing-2, 8px) var(--spacing-8, 32px) ;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-2, 8px);
+    align-self: stretch;
+    border-radius: var(--rounded-md, 6px);
+    background: var(--danger, #6D28D9);
+    border: 1px solid var(--danger-border, #DC2626);
+    color: #450A0A;
+}

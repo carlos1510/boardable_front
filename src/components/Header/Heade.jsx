@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import styles from "./styles.module.css";
-import { Form } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 
 function Header({ username, className }){
     const headerClassNames = clsx(className, styles.container);
@@ -17,7 +17,7 @@ function Header({ username, className }){
                 
             </div>
             <div className={styles.content_user}>
-                <div className={styles.username}>{username}</div>
+                <Link to="/account" className={styles.button_account}>My Account</Link>
                 <Form method="POST" action="/logout">
                     <button className={styles.button}>Logout</button>
                 </Form>
