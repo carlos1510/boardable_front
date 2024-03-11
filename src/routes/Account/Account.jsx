@@ -2,6 +2,7 @@ import * as React from "react";
 import { Form, useNavigation, useOutletContext } from "react-router-dom";
 import styles from "./styles.module.css";
 import { deleteUser, editUser, getUser } from "../../services/users";
+import Swal from "sweetalert2";
 
 const initialValues = {
     id: 0,
@@ -53,7 +54,21 @@ function Account(){
             }
 
             setFormData(initialValuesNew);
-        }catch(error){}
+            Swal.fire({
+                icon: "success", 
+                title: "Exito!", 
+                html: `<p>Se <strong>Actualizó</strong> Correctamente los datos</p>`,
+                timer: 3000,
+                position: "center"
+            });
+        }catch(error){
+            Swal.fire({
+                icon: "error",
+                title: "Error!", 
+                text: "No se pudo completar con la actualización", 
+                timer: 3000
+            });
+        }
     }
 
     async function confirmarDeleteUser(){
